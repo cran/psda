@@ -7,13 +7,13 @@
 pcorr(polygons)
 }
 \arguments{
-\item{polygons}{A list of matrices of dimension l x 2 where l represent number of sides polygon.}
+\item{polygons}{A list of matrices of dimension l x 2, where l represent number of sides polygon.}
 }
 \value{
 The method returns a integer.
 }
 \description{
-Compute the empirical correlation between two polygonal variables.
+Compute the symbolic polygonal empirical correlation.
 }
 \examples{
 x = psim(10, 3) #simulate 10 polygons of 3 sides

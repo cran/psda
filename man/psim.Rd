@@ -15,7 +15,7 @@ psim(objects, vertices)
 A list of polygons.
 }
 \description{
-Function to create a polygonal data list.
+Simulate a polygonal variable.
 }
 \examples{
 psim(2, 3)

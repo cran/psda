@@ -2,9 +2,9 @@
 #' 
 #' It transform labeled data in polygonal datas.
 #' 
-#' @param data A data frame.
+#' @param data A data frame with the first column of type factor.
 #' @param vertices integer that represent number of vertices of polygon.
-#' @return A list of matrices of dimension l x 2 where l represent number of vertices polygon transformed.
+#' @return A list of matrices of dimension l x 2, where l represent number of vertices polygon transformed.
 #' @examples
 #' cat <- as.factor(sample(1:20, 1000, replace = TRUE))
 #' cv <- runif(1000) #classical variable

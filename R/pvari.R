@@ -1,5 +1,5 @@
 #' Polygonal internal variance
-#' @description Caltulate polygonal internal variance for polygonal data.
+#' @description Caltulate the symbolic polygonal internal variance for a polygonal data.
 #' @param polygon a matrix that represents a polygonal variable.
 #' @return The internal variance.
 #' @examples 

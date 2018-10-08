@@ -1,5 +1,5 @@
 #' Polygonal symbolic internal mean
-#' @description Compute the polygonal empirical mean for only one polygonal variable.
+#' @description Compute the symbolic polygonal empirical mean for only one observation (classes).
 #' @param polygon a matrix representing the polygon.
 #' @examples
 #' x <- psim(1, 3)

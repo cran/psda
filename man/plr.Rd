@@ -11,7 +11,7 @@ plr(formula, env, residuals_type = "mse", intercept = TRUE)
 
 \item{env}{environment that contain the variables of study.}
 
-\item{residuals_type}{type of residual, e.g., rmsd and mse residuals.}
+\item{residuals_type}{type of residual, e.g., rmsd and mse residuals by area.}
 
 \item{intercept}{logical, if TRUE the model present intercept, otherwise it do not present intercept.}
 }

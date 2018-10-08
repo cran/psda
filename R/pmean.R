@@ -2,10 +2,9 @@
 #' 
 #' Compute the polygonal empirical mean for polygonal variable.
 #' 
-#' @param polygons A list of matrices of dimension l x 2 where l represent number of sides polygon.
+#' @param polygons A list of matrices of dimension l x 2, where l represent number of sides polygon.
 #' 
-#' @return The method returns a vector containing the polygonal empiric mean of variable one and variable two,
-#'  respectively.
+#' @return The method returns a vector containing the symbolic polygonal empirical mean in first and second dimension, respectively.
 #' @examples 
 #' x <- psim(10, 3) #simulate 10 polygons of 3 sides
 #' pmean(x)

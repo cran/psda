@@ -1,9 +1,9 @@
 #' Polygonal symbolic variance
 #'
-#' Estime the polygonal empirical variance between polygonal variables.
+#' Estime the symbolic polygonal empirical variance.
 #'
 #' @param polygons A list of matrices of dimension l x 2 where l represent number of sides polygon.
-#' @return The method returns a vector.
+#' @return The method returns a bi-dimensional vector.
 #' @examples 
 #' x <- psim(10, 3) #simulate 10 polygons of 3 sides
 #' pvar(x)

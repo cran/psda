@@ -13,7 +13,7 @@ pmean_id(polygon)
 a polygonal empiric mean of a polygon.
 }
 \description{
-Compute the polygonal empirical mean for only one polygonal variable.
+Compute the symbolic polygonal empirical mean for only one observation (classes).
 }
 \examples{
 x <- psim(1, 3)

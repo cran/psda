@@ -13,7 +13,7 @@ pcov(polygons)
 The method returns a integer.
 }
 \description{
-Compute the empirical covariance of two polygonal variables.
+Compute the symbolic polygonal empirical covariance.
 }
 \examples{
 x <- psim(10, 3) #simulate 10 polygons of 3 sides

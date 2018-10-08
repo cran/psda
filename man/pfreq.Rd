@@ -7,8 +7,7 @@
 pfreq(pol)
 }
 \arguments{
-\item{pol}{A list of matrices of dimension l x 2, where l represent number of sides polygon. 
-This matrices represent the polygons.}
+\item{pol}{A list of matrices of dimension l x 2, where l represent number of sides polygon.}
 }
 \description{
 Compute the bivariate relative frequency.

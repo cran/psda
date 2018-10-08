@@ -13,7 +13,7 @@ pvari(polygon)
 The internal variance.
 }
 \description{
-Caltulate polygonal internal variance for polygonal data.
+Caltulate the symbolic polygonal internal variance for a polygonal data.
 }
 \examples{
 x <- psim(1, 3) #simulate a polygons of 3 sides

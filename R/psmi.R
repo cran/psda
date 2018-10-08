@@ -1,5 +1,5 @@
-#' Polygonal internam second moment
-#' @description Caltulate polygonal second moment for polygonal data.
+#' Polygonal internal second moment
+#' @description Caltulate symbolic polygonal internal second moment for polygonal data.
 #' @param polygon a matrix that represents a polygonal variable.
 #' @return The internal variance.
 #' @examples 

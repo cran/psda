@@ -10,7 +10,7 @@ pplot(polygon)
 \item{polygon}{A list of matrices with dimension l x 2 where l represents vertices number of polygon.}
 }
 \description{
-Prints all overlaid graphics in the display.
+Prints all overlaid polygons in the display. The polygons obtained through classes.
 }
 \examples{
 x <- psim(10, 3) #simulate 10 polygons of 3 sides

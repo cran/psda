@@ -7,11 +7,10 @@
 pmean(polygons)
 }
 \arguments{
-\item{polygons}{A list of matrices of dimension l x 2 where l represent number of sides polygon.}
+\item{polygons}{A list of matrices of dimension l x 2, where l represent number of sides polygon.}
 }
 \value{
-The method returns a vector containing the polygonal empiric mean of variable one and variable two,
- respectively.
+The method returns a vector containing the symbolic polygonal empirical mean in first and second dimension, respectively.
 }
 \description{
 Compute the polygonal empirical mean for polygonal variable.

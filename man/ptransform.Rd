@@ -7,12 +7,12 @@
 ptransform(data, vertices)
 }
 \arguments{
-\item{data}{A data frame.}
+\item{data}{A data frame with the first column of type factor.}
 
 \item{vertices}{integer that represent number of vertices of polygon.}
 }
 \value{
-A list of matrices of dimension l x 2 where l represent number of vertices polygon transformed.
+A list of matrices of dimension l x 2, where l represent number of vertices polygon transformed.
 }
 \description{
 It transform labeled data in polygonal datas.

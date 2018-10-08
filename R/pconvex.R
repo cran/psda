@@ -2,7 +2,7 @@
 #' 
 #' @description Verify convexity of the polygons.
 #' 
-#' @param polygon A matrix of dimension l x 2 where l represent number of sides polygon.
+#' @param polygon A matrix with dimension l x 2, where l represent number of sides polygon.
 #' @return A boolean.
 #' @examples
 #' x <- psim(1,4)

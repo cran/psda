@@ -3,7 +3,6 @@
 #' Compute the bivariate relative frequency.
 #' 
 #' @param pol A list of matrices of dimension l x 2, where l represent number of sides polygon. 
-#' This matrices represent the polygons.
 #' @examples 
 #' x <- psim(10, 3) #simulate 10 polygons of 3 sides
 #' frequency <- pfreq(x)

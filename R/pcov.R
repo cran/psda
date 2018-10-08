@@ -1,6 +1,6 @@
 #' Polygonal symbolic covariance
 #' 
-#' Compute the empirical covariance of two polygonal variables.
+#' Compute the symbolic polygonal empirical covariance.
 #'  
 #' @param polygons A list of polygonal datas.
 #' @return The method returns a integer.  

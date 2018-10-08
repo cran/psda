@@ -1,6 +1,6 @@
 #' Polygonal symbolic data simulation
 #' 
-#' Function to create a polygonal data list.
+#' Simulate a polygonal variable.
 #' 
 #' @param objects number of objects simulated.
 #' @param vertices number of vertex of the polygon 

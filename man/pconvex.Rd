@@ -7,7 +7,7 @@
 pconvex(polygon)
 }
 \arguments{
-\item{polygon}{A matrix of dimension l x 2 where l represent number of sides polygon.}
+\item{polygon}{A matrix with dimension l x 2, where l represent number of sides polygon.}
 }
 \value{
 A boolean.

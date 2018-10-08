@@ -1,6 +1,6 @@
 #' Plot polygonal symbolic variable
 #'
-#' @description Prints all overlaid graphics in the display.
+#' @description Prints all overlaid polygons in the display. The polygons obtained through classes.
 #' 
 #' @param polygon A list of matrices with dimension l x 2 where l represents vertices number of polygon.
 #' @examples 

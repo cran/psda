@@ -2,7 +2,7 @@
 #' @description  plr is used to fit polygonal linear models.
 #' @param formula an object of class "formula": a symbolic description of the model to be fitted.
 #' @param env environment that contain the variables of study.
-#' @param residuals_type type of residual, e.g., rmsd and mse residuals.
+#' @param residuals_type type of residual, e.g., rmsd and mse residuals by area.
 #' @param intercept logical, if TRUE the model present intercept, otherwise it do not present intercept.
 #' @return beta_hat a vector of estimators for beta proposed in model.
 #' @return SSRES sum square residuals.

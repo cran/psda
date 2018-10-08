@@ -1,12 +1,12 @@
 citHeader("To cite psda in publications, please use:")
 
-citEntry(entry = "Misc",
+citEntry(entry = "Manual",
   author = person(given = "Wagner J. F. Silva"),
-  title = "Analise de Dados Poligonais: Uma Nova Abordagem para Dados Simbolicos",
+  title = "Symbolic Polygonal Data Analysis",
   year = "2017",
-  note = {"R package version 1.0.0"},
-  url = "http://www.de.ufpe.br/~cysneiros/sda/dissertation.pdf",
+  note = {"R package version 1.0.1"},
+  url = "https://www.sciencedirect.com/science/article/pii/S0950705118304052",
   textVersion = paste("W. Silva.", 
-  title = "Analise de Dados Poligonais: Uma Nova Abordagem para Dados Simbolicos, 2017", 
-  "http://www.de.ufpe.br/~cysneiros/sda/dissertation.pdf")
+  title = "Polygonal data analysis: A new framework in symbolic data analysis, 2018", 
+  "https://www.sciencedirect.com/science/article/pii/S0950705118304052")
 )

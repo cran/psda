@@ -2,7 +2,7 @@
 % Please edit documentation in R/psmi.R
 \name{psmi}
 \alias{psmi}
-\title{Polygonal internam second moment}
+\title{Polygonal internal second moment}
 \usage{
 psmi(polygon)
 }
@@ -13,7 +13,7 @@ psmi(polygon)
 The internal variance.
 }
 \description{
-Caltulate polygonal second moment for polygonal data.
+Caltulate symbolic polygonal internal second moment for polygonal data.
 }
 \examples{
 x <- psim(1, 3) #simulate a polygon of 3 sides
