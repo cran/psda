@@ -1,5 +1,6 @@
-0ac14f3fa67294ca0bc02e9d09071a7c *DESCRIPTION
+5396b03edde75b5c319f6490df5a5596 *DESCRIPTION
 c7b950a664baa668112779c32c6e1b2d *NAMESPACE
+aff49e628509f53f74c6b347746eb3bf *R/data.R
 6a4da0077b3ac4c72e9097ed9cf8e820 *R/parea.R
 345d24ebcba4a75cb8e727ef234c0ad9 *R/pconvex.R
 20f59129fc9683f480985dcfaba4b2b4 *R/pcorr.R
@@ -14,7 +15,10 @@ df1af9ddf5c2f61108bd0b49ad93e0a7 *R/psim.R
 dfab4a9bca91a5c009fd063dd95b2947 *R/ptransform.R
 724d51b43e6a2a036b6677305c882346 *R/pvar.R
 5f3c6392a287dddd4caaaee0fd751b4e *R/pvari.R
+6e44ecd537c60bab8ca9de67057ef56a *data/longair.rda
+4b89ce6e27cc53ee99d8366ab0ea026f *data/wnba2014.rda
 8b7524ff34b87a3977f6d1d6d687ca4a *inst/CITATION
+cecc87e4599444a3adc396584b957b7e *man/longair.Rd
 cdf1d71261dd3efeab97e3bb0cc545cb *man/parea.Rd
 4612f69917171ac97dde17e0fff977e7 *man/pconvex.Rd
 85f1264fbead969a329615967b0cbd6d *man/pcorr.Rd
@@ -29,3 +33,4 @@ a9454332c7da70cff7a514956973ba25 *man/psmi.Rd
 7c76ccd9d80957b31003fe79cc069281 *man/ptransform.Rd
 dbbd9be3ed4b866c2224777273b6753a *man/pvar.Rd
 77d70d4bb1666d20dad71ff735a5c4f8 *man/pvari.Rd
+68ecc31bcefbaa36485bcb7d76a155eb *man/wnba2014.Rd
