@@ -1,7 +1,7 @@
 Package: psda
 Title: Polygonal Symbolic Data Analysis
-Version: 1.3.0
-Date: 2019-03-19
+Version: 1.3.1
+Date: 2019-03-20
 Authors@R: c(person("Wagner", "Silva", email = "wjfs@cin.ufpe.br", role = c("aut", "cre", "ths")),
            person("Renata", "Souza", email = "rmcrs@cin.ufpe.br", role = c("aut")),
            person("Francisco", "Cysneiros", email = "cysneiros@de.ufpe.br", role = c("aut")))
@@ -15,10 +15,10 @@ LazyData: true
 RoxygenNote: 6.1.1
 Suggests: testthat
 NeedsCompilation: no
-Packaged: 2019-03-19 13:34:40 UTC; Wagner Jorge
+Packaged: 2019-03-20 04:31:18 UTC; Wagner Jorge
 Author: Wagner Silva [aut, cre, ths],
   Renata Souza [aut],
   Francisco Cysneiros [aut]
 Maintainer: Wagner Silva <wjfs@cin.ufpe.br>
 Repository: CRAN
-Date/Publication: 2019-03-19 14:10:03 UTC
+Date/Publication: 2019-03-22 13:50:02 UTC
