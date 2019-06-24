@@ -20,8 +20,6 @@ residuals is calculated as the response variable minus the fitted values.
 
 rank the numeric rank of the fitted polygonal linear model.
 
-df.residual degrees freedom of the residuals.
-
 call the matched call.
 
 fitted.values the fitted mean values.

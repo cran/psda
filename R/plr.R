@@ -6,7 +6,6 @@
 #' @param ... additional arguments to be passed to the low level polygonal linear regression fitting functions.
 #' @return residuals is calculated as the response variable minus the fitted values.
 #' @return rank the numeric rank of the fitted polygonal linear model.
-#' @return df.residual degrees freedom of the residuals.
 #' @return call the matched call.
 #' @return fitted.values the fitted mean values.
 #' @return terms the \code{\link[stats]{terms}}.
@@ -140,7 +139,7 @@ plr <- function(formula, data, model = TRUE, ...){
   
   if (n_variables == 0L) {
     return(list(coefficients = numeric(), residuals = Y, 
-                fitted.values = 0 , rank = 0, df.residual = n_observations))
+                fitted.values = 0 , rank = 0))
   }
   
   rank <- ncol(X)
@@ -152,7 +151,6 @@ plr <- function(formula, data, model = TRUE, ...){
   mf <- sum(is.na(response_variable))
   class(len_missings) <- 'omit'
   res$na.action <- missings_position
-  res$df.residual <- nrow(X) - rank
   
   if(model){
     center_radius_data <- data.frame(yc = yc, yr = yr, mat_xc, x_radius)

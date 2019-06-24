@@ -26,10 +26,8 @@ print.summary.plr <- function(x, digits = max(3L, getOption("digits") - 3L),
                               concise = FALSE, ...){
   cat("\nCall:\n", paste(deparse(x$call), sep = "\n", collapse = "\n"), 
       "\n\n", sep = "")
-  
+
   resid <- x$residuals
-  df <- x$df
-  rdf <- df
   
   coefs <- as.data.frame(x$coefficients)
   
@@ -47,21 +45,5 @@ print.summary.plr <- function(x, digits = max(3L, getOption("digits") - 3L),
   else cat("No coefficients\n")
   cat("\n")
 
-  cat("\nResidual standard error:", format(signif(x$sigma,
-                                                  digits)), "on", rdf, "degrees of freedom")
-  cat("\n")
-  if (nzchar(mess <- naprint(x$na.action)))
-    cat("  (", mess, ")\n", sep = "")
-  if (!is.null(x$fstatistic)) {
-    cat("Multiple R-squared: ", formatC(x$r.squared, digits = digits))
-    cat(",\tAdjusted R-squared: ", formatC(x$adj.r.squared,
-                                           digits = digits), "\nF-statistic:", formatC(x$fstatistic[1L],
-                                                                                       digits = digits), "on", x$fstatistic[2L], "and",
-        x$fstatistic[3L], "DF,  p-value:", format.pval(pf(x$fstatistic[1L],
-                                                          x$fstatistic[2L], x$fstatistic[3L], lower.tail = FALSE),
-                                                       digits = digits, if (!concise) .Machine$double.eps else 1e-4))
-    cat("\n")
-  }
-  
   invisible(x)
 }

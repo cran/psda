@@ -33,7 +33,7 @@ radius a simple symbolic variable is obtained.
 ## Obtaining a simple symbolic polygonal variable
 cat1 <- as.factor(sample(1:20, 1000, replace = TRUE))
 cv1 <- runif(1000) #classical variable
-cvc1 <- data.frame(category = cat1, cv1) 
+cvc1 <- data.frame(category = cat1, variable = cv1) 
 pol1 <- paggreg(cvc1)
 out <- psymbolic(pol1, 6) #Hexagon
 out$X1

@@ -18,25 +18,18 @@ digits to be printed in values.}
 \value{
 residuals calculated as the response variable minus the fitted values.
 
-adj.r.squared \eqn{R^2} measure \emph{adjusted} penalizing for higher p.
-
-sigma the square root of the estimated variance of the random error.
+sigma the given by square root of the estimated variance of the random error 
+\deqn{\sigma^2 = \frac{\sum{i = 1}^{n} (y_i - \hat{y}_i)^2}{n - p - 1}} where \emph{p} is 
+two times the number of independent variables.
 
 call the matched call.
-
-df degrees of freedom.
 
 aliased named logical vector showing if the original coefficients are aliased.
 
 terms the \code{\link[stats]{terms}}.
 
 coefficients a p x 4 matrix with columns for the estimated coefficient, 
-its standard error, t-statistic and corresponding (two-sided) p-value.
-
-fstatistics (for models including non-intercept terms) a 3-vector with the value
- the F-statistic with its numerator and denominator degrees of freedom.
-
-r.squared \eqn{R^2}, the fraction of variance explained by the model.
+its standard error, z-statistic and corresponding (two-sided) p-value.
 }
 \description{
 \code{summary} method for class \code{plr}.

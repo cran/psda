@@ -5,17 +5,14 @@
 #' digits to be printed in values.
 #' @param ... further arguments passed to or from other methods.
 #' @return residuals calculated as the response variable minus the fitted values.
-#' @return adj.r.squared \eqn{R^2} measure \emph{adjusted} penalizing for higher p.
-#' @return sigma the square root of the estimated variance of the random error.
+#' @return sigma the given by square root of the estimated variance of the random error 
+#' \deqn{\sigma^2 = \frac{\sum{i = 1}^{n} (y_i - \hat{y}_i)^2}{n - p - 1}} where \emph{p} is 
+#' two times the number of independent variables.
 #' @return call the matched call.
-#' @return df degrees of freedom.
 #' @return aliased named logical vector showing if the original coefficients are aliased.
 #' @return terms the \code{\link[stats]{terms}}.
 #' @return coefficients a p x 4 matrix with columns for the estimated coefficient, 
-#' its standard error, t-statistic and corresponding (two-sided) p-value. 
-#' @return fstatistics (for models including non-intercept terms) a 3-vector with the value
-#'  the F-statistic with its numerator and denominator degrees of freedom.
-#' @return r.squared \eqn{R^2}, the fraction of variance explained by the model.
+#' its standard error, z-statistic and corresponding (two-sided) p-value. 
 #' @examples 
 #' yp <- psim(50, 10) #simulate 50 polygons of 10 sides
 #' xp1 <- psim(50, 10) #simulate 50 polygons of 10 sides
@@ -37,32 +34,30 @@ summary.plr <- function (object, digits = max(3L, getOption("digits") - 3L), ...
   n <- nrow(z$model)
   p <- z$rank
   
-  rdf <- z$df.residual
+  rdf <- n - p - 1
   r <- z$residuals
   n <- length(r)
-  
+
   ans <- new.env()
   ans$call <- z$call
   ans$aliased <- is.na(coef(z))
   ans$residuals <- r
-  ans$df <- z$df.residual
+  
+  rss <- sum(r^2)
+  resvar <- rss/rdf
+  ans$sigma <- resvar
   
   if (p == 0) {
     ans$coefficients <- matrix(NA, 0L, 4L)
     dimnames(ans$coefficients) <- list(NULL, c("Estimate", 
-                                               "Std. Error", "t value", "Pr(>|t|)"))
-    ans$df <- c(0L, n, length(ans$aliased))
+                                               "Std. Error", "z value", "Pr(>|z|)"))
     ans$sigma <- sqrt(resvar)
-    ans$r.squared <- ans$adj.r.squared <- 0
     return(ans)
   }
   if (is.null(z$terms)) 
     stop("invalid 'plr' object:  no 'terms' component")
   if (!inherits(z, "plr")) 
     warning("calling summary.plr(<fake-plr-object>) ...")
-  
-  if (is.na(z$df.residual) || n - p != z$df.residual) 
-    warning("residual degrees of freedom in z suggest this is not an \"plr\" fit")
   
   f <- z$fitted.values
   
@@ -80,25 +75,13 @@ summary.plr <- function (object, digits = max(3L, getOption("digits") - 3L), ...
 
   n <- length(z$residuals)
   model <- as.matrix(z$model)
-  tval <- z$coefficients / se
+  zval <- z$coefficients / se
   
   ans$coefficients <- cbind(Estimate = z$coefficients, `Std. Error` = se, 
-                            `t value` = tval, `Pr(>|t|)` = 2 * pt(abs(tval), rdf, 
+                            `z value` = zval, `Pr(>|z|)` = 2 * pt(abs(zval), rdf, 
                                                                   lower.tail = FALSE))
-  ans$sigma <- sqrt(resvar)
+
   ans$terms <- z$terms
-  
-  if (p != attr(z$terms, "intercept")) {
-    df.int <- if (attr(z$terms, "intercept")) 
-      1L
-    else 0L
-    ans$r.squared <- mss/(mss + rss)
-    ans$adj.r.squared <- 1 - (1 - ans$r.squared) * ((n - 
-                                                       df.int)/rdf)
-    ans$fstatistic <- c(value = (mss/(p - df.int))/resvar, 
-                        numdf = p - df.int, dendf = rdf)
-  }
-  else ans$r.squared <- ans$adj.r.squared <- 0
   class(ans) <- "summary.plr"
   ans
 }
