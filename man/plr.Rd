@@ -33,6 +33,18 @@ model the matrix model for center and radius.
 \description{
 plr is used to fit polygonal linear models.
 }
+\details{
+Polygonal linear regression is the first model to explain the behavior of a symbolic polygonal
+variable in furnction to other polygonal variables, dependent and regressors, respectively.
+\href{https://www.sciencedirect.com/science/article/pii/S0950705118304052}{PLR} is based on the
+least squares and uses the center and radius of polygons as representation them. The model is
+given by \eqn{y = X\beta + \epsilon}, where \eqn{y, X, \beta}, and \eqn{\epsilon} is the dependent
+variable, matrix model, unknown parameters, and non-observed errors. In the model, the vector 
+\eqn{y = (y_c^T, y_r)^T}, where \eqn{y_c} and \eqn{y_r} is the center and radius of center and radius.
+The matrix model \eqn{X = diag(X_c, X_r)} for \eqn{X_c} and \eqn{X_r} describing the center and radius
+of regressors variables and finally, \eqn{\beta = (\beta_c^T, \beta_r^T)^T}. A detailed study about the
+model can be found in \href{https://www.sciencedirect.com/science/article/pii/S0950705118304052}{Silva et al.(2019)}.
+}
 \examples{
 yp <- psim(10, 10) #simulate 10 polygons of 10 sides
 xp1 <- psim(10, 10) #simulate 10 polygons of 10 sides

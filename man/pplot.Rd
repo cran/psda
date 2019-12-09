@@ -4,15 +4,19 @@
 \alias{pplot}
 \title{Plot polygonal symbolic variable}
 \usage{
-pplot(polygon)
+pplot(polygon, center = FALSE, color = "black")
 }
 \arguments{
 \item{polygon}{A list of matrices with dimension l x 2 where l represents vertices number of polygon.}
+
+\item{center}{logical. iF FALSE(the default) the center of polygon is not displayed.}
+
+\item{color}{A string that describes the color of center.}
 }
 \description{
 Prints all overlaid polygons in the display. The polygons obtained through classes.
 }
 \examples{
 x <- psim(10, 10) #simulate 10 polygons of 10 sides
-pplot(x)
+pplot(x, center = TRUE, color = 'red')
 }
