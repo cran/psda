@@ -1,6 +1,6 @@
-05650a37815a2f32f2f46f92475e9523 *DESCRIPTION
+ea01de7578aa80daebd7ee75b59a9b74 *DESCRIPTION
 7ba258b1c4c333584284fc52ed9ca120 *NAMESPACE
-aff49e628509f53f74c6b347746eb3bf *R/data.R
+f0a7e05b5bce71cfecdb32c78dafa404 *R/data.R
 c82f7a1d2adb1ee233b400d05f06283d *R/fitted.plr.R
 53d94aaa1bb81faac195e6d8120be5e6 *R/na.omit.polygonal.R
 229fe7e0a25e8189193640a6c682f0f5 *R/paggreg.R
@@ -28,11 +28,12 @@ d5667799a4f6a5a6ecd592ce4e2e4818 *R/spolygon.R
 9bc7d3cbead9be54640414f05345ed9e *README.md
 7b1232d01fefa791e8474fd5683ea7d9 *build/vignette.rds
 6e44ecd537c60bab8ca9de67057ef56a *data/longair.rda
+284a1066764bcb8ad90491dd7729722f *data/saeb2017.rda
 4b89ce6e27cc53ee99d8366ab0ea026f *data/wnba2014.rda
 5a59a61e7c655d3c2ac9e2c1ccae7a3b *inst/CITATION
 7d0486dbe78ad24d3270c88e7e5bfa44 *inst/doc/introdution_psda.R
 2b1f0257db8082d0bf48d6478766dfe9 *inst/doc/introdution_psda.Rmd
-f8da069b3b5857904143916000e26b33 *inst/doc/introdution_psda.html
+28c10f8e087d51e1f9ea2fdfe985cc62 *inst/doc/introdution_psda.html
 78f8d8bd2ae7959b2eab23b829396ab9 *man/fitted.Rd
 cecc87e4599444a3adc396584b957b7e *man/longair.Rd
 d390864db9cdb9b2e0501e2085abf970 *man/na.omit.Rd
@@ -56,6 +57,7 @@ b45d8582d2fa95a8488b3c520e61ad2b *man/ptransform-deprecated.Rd
 3088500215fa827d14421e4176d39c0b *man/pvar.Rd
 98a76672cd10b8f229b8e83f16042ad3 *man/pvari.Rd
 c22e2bf4056ec8e434323241ed2b3c54 *man/rmsea.Rd
+1122f1bcd0db0c3ede021f6ad99547ae *man/saeb2017.Rd
 0ca28554c5c71b08b619075cbea95f5a *man/spolygon.Rd
 827ed98e8de659c0a2f6990e0a5029fc *man/summary.plr.Rd
 68ecc31bcefbaa36485bcb7d76a155eb *man/wnba2014.Rd

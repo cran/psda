@@ -37,3 +37,26 @@
 #' }
 #' @source \url{https://www.sciencedirect.com/science/article/pii/S0950705118304052}
 "longair"
+
+#' Basic Education Assessment System 2017 (SAEB 2017)
+#' @description The dataset describes information about the Brazilian Basic Education Assessment System (SAEB) 
+#' and infrastructure of the schools in 2017.  
+#' 
+#' @format A data.frame with 4037 observations (rows) and 13 variables, each row represent a 
+#' county. One column indicates the county identification, the first six are the center 
+#' of the polygons, and the six last are the radius of polygons. In datails:
+#' \describe{
+#' \item{county}{Identification of the county that participate of the SAEB.}
+#' \item{proficiency_lp_center}{Leverage of Portuguese language proficiency score.}
+#' \item{proficiency_mt_center}{Leverage of the Mathematics.} 
+#' \item{classroom_center}{Leverage number of classroom.}
+#' \item{classroom_used_center}{Leverage number of classroom used.}
+#' \item{employess}{Leverage number of employees of the schools.}
+#' \item{proficiency_lp_radius}{Dispersion of the Portuguese language proficiency score.}
+#' \item{proficiency_mt_radius}{Dispersion of the Mathematics proficiency score.}
+#' \item{classroom_radius}{Classrooms dispersion.}
+#' \item{classroom_used_radius}{Classrooms used dispersion.}
+#' \item{computers_radius}{Dispertion of the computer numbers.}
+#' \item{employees_radius}{Dispersion of the employess numbers.}
+#' }
+"saeb2017"

@@ -20,46 +20,254 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
 
-<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 </head>
 
@@ -74,14 +282,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(psda)
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'psda'</span>
-<span class="co">#&gt; The following object is masked from 'package:stats':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     na.omit</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(psda)</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="co">#&gt; Attaching package: &#39;psda&#39;</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="co">#&gt; The following object is masked from &#39;package:stats&#39;:</span></a>
+<a class="sourceLine" id="cb1-5" title="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb1-6" title="6"><span class="co">#&gt;     na.omit</span></a></code></pre></div>
 <p>This vignette document is a brief tutorial for psda 1.3.2. Descriptive, auxiliary a modeling functions are presented and applied an example.</p>
-<p>Data Science is fundamental to handle and extract knowledge about the data. Silva et al. [1] presented the Symbolic Polygonal Data Analysis as an approach to this task. The psda package is a toolbox to transform number in knowledge. We highlight some important characteristics of the package:</p>
+<p>Data Science is fundamental to handle and extract knowledge about the data. Silva et al. [1] presented the Symbolic Polygonal Data Analysis as an approach to this task. The psda package is a toolbox to transform number in knowledge. We highlight some important characteristics of the package:</p>
 <ul>
 <li>It constructs symbolic polygonal data from classical data;</li>
 <li>It calculates symbolic polygonal descriptive measures;</li>
@@ -90,168 +298,168 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="wnba-2014-data" class="section level1">
 <h1>WNBA 2014 Data</h1>
 <p>Women national basketball american (WNBA) dataset is used to demostrate the funcionality of the package. It has classical data with dimension 4022 by 6.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(psda)
-<span class="kw">library</span>(ggplot2)
-<span class="kw">data</span>(wnba2014)
-dta &lt;-<span class="st"> </span>wnba2014</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">library</span>(psda)</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">data</span>(wnba2014)</a>
+<a class="sourceLine" id="cb2-4" title="4">dta &lt;-<span class="st"> </span>wnba2014</a></code></pre></div>
 <p>To construct the symbolic polygonal variables we need to have a class, i.e. a categorical variable. Then, we use the <code>player_id variable</code></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dta<span class="op">$</span>player_id &lt;-<span class="st"> </span><span class="kw">factor</span>(dta<span class="op">$</span>player_id)
-<span class="kw">head</span>(dta)
-<span class="co">#&gt;   player_id team_pts opp_pts minutes fgatt efficiency</span>
-<span class="co">#&gt; 1         1       89      77      36    21         35</span>
-<span class="co">#&gt; 2         1       90      87      43    24         35</span>
-<span class="co">#&gt; 3         1       94      93      35    21         43</span>
-<span class="co">#&gt; 4         1       87      82      31    19         26</span>
-<span class="co">#&gt; 5         1       75      72      35    14         16</span>
-<span class="co">#&gt; 6         1       88      72      34    18         30</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">dta<span class="op">$</span>player_id &lt;-<span class="st"> </span><span class="kw">factor</span>(dta<span class="op">$</span>player_id)</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">head</span>(dta)</a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">#&gt;   player_id team_pts opp_pts minutes fgatt efficiency</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">#&gt; 1         1       89      77      36    21         35</span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; 2         1       90      87      43    24         35</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; 3         1       94      93      35    21         43</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; 4         1       87      82      31    19         26</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; 5         1       75      72      35    14         16</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; 6         1       88      72      34    18         30</span></a></code></pre></div>
 <p>Next, we can obtain the center and radius of the polygon through the <code>paggreg</code> function. The only argument necessary is a dataset which has the first column as a factor (the class). From <code>head</code> function we can show the first six symbolic polygonal individuals in center and radius representation.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">center_radius &lt;-<span class="st"> </span><span class="kw">paggreg</span>(dta)
-<span class="kw">head</span>(center_radius<span class="op">$</span>center, <span class="dv">6</span>)
-<span class="co">#&gt;   team_pts  opp_pts  minutes    fgatt efficiency</span>
-<span class="co">#&gt; 1 81.64706 77.17647 34.73529 18.02941   25.76471</span>
-<span class="co">#&gt; 2 81.17647 83.26471 35.05882 16.08824   16.52941</span>
-<span class="co">#&gt; 3 78.43333 77.80000 33.13333 15.36667   22.43333</span>
-<span class="co">#&gt; 4 80.70968 78.09677 30.96774 15.83871   16.22581</span>
-<span class="co">#&gt; 5 72.14706 75.20588 32.58824 15.02941   19.58824</span>
-<span class="co">#&gt; 6 83.57576 73.45455 30.78788 11.42424   17.15152</span>
-<span class="kw">head</span>(center_radius<span class="op">$</span>radius, <span class="dv">6</span>)
-<span class="co">#&gt;   team_pts  opp_pts   minutes     fgatt efficiency</span>
-<span class="co">#&gt; 1 20.14422 21.19732  7.774220  8.406135   18.96765</span>
-<span class="co">#&gt; 2 21.88383 22.24551  6.803585  6.331597   15.54844</span>
-<span class="co">#&gt; 3 17.89381 26.75766 10.180893  8.460592   15.42665</span>
-<span class="co">#&gt; 4 20.67007 18.67158 12.727753 10.419172   17.41807</span>
-<span class="co">#&gt; 5 21.85424 20.19168 12.081718  9.890127   18.52839</span>
-<span class="co">#&gt; 6 16.82283 17.86121 10.121235  8.718232   14.96764</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">center_radius &lt;-<span class="st"> </span><span class="kw">paggreg</span>(dta)</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">head</span>(center_radius<span class="op">$</span>center, <span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co">#&gt;   team_pts  opp_pts  minutes    fgatt efficiency</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co">#&gt; 1 81.64706 77.17647 34.73529 18.02941   25.76471</span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="co">#&gt; 2 81.17647 83.26471 35.05882 16.08824   16.52941</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt; 3 78.43333 77.80000 33.13333 15.36667   22.43333</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; 4 80.70968 78.09677 30.96774 15.83871   16.22581</span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; 5 72.14706 75.20588 32.58824 15.02941   19.58824</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; 6 83.57576 73.45455 30.78788 11.42424   17.15152</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="kw">head</span>(center_radius<span class="op">$</span>radius, <span class="dv">6</span>)</a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt;   team_pts  opp_pts   minutes     fgatt efficiency</span></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; 1 20.14422 21.19732  7.774220  8.406135   18.96765</span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; 2 21.88383 22.24551  6.803585  6.331597   15.54844</span></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; 3 17.89381 26.75766 10.180893  8.460592   15.42665</span></a>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; 4 20.67007 18.67158 12.727753 10.419172   17.41807</span></a>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; 5 21.85424 20.19168 12.081718  9.890127   18.52839</span></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; 6 16.82283 17.86121 10.121235  8.718232   14.96764</span></a></code></pre></div>
 <p>To construct the polygons it is necessary define the number of sides disered. We use as an example a pentagon, i.e. polygons with five vertices. The construction of polygons is given by <code>psymbolic</code> function that need of an object of the class <code>paggregated</code> and the number of vertices. To exemplify, we use the <code>head</code> function to show the first three individuals of the <code>team_pts</code> polygonal variable.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v &lt;-<span class="st"> </span><span class="dv">5</span> 
-polygonal_variables &lt;-<span class="st"> </span><span class="kw">psymbolic</span>(center_radius, v)
-<span class="kw">head</span>(polygonal_variables<span class="op">$</span>team_pts, <span class="dv">3</span>)
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,]  87.87197 100.80535</span>
-<span class="co">#&gt; [2,]  65.35004  93.48754</span>
-<span class="co">#&gt; [3,]  65.35004  69.80658</span>
-<span class="co">#&gt; [4,]  87.87197  62.48877</span>
-<span class="co">#&gt; [5,] 101.79128  81.64706</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[2]]</span>
-<span class="co">#&gt;           [,1]      [,2]</span>
-<span class="co">#&gt; [1,]  87.93895 101.98923</span>
-<span class="co">#&gt; [2,]  63.47208  94.03946</span>
-<span class="co">#&gt; [3,]  63.47208  68.31348</span>
-<span class="co">#&gt; [4,]  87.93895  60.36371</span>
-<span class="co">#&gt; [5,] 103.06030  81.17647</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[3]]</span>
-<span class="co">#&gt;          [,1]     [,2]</span>
-<span class="co">#&gt; [1,] 83.96283 95.45136</span>
-<span class="co">#&gt; [2,] 63.95694 88.95105</span>
-<span class="co">#&gt; [3,] 63.95694 67.91561</span>
-<span class="co">#&gt; [4,] 83.96283 61.41531</span>
-<span class="co">#&gt; [5,] 96.32715 78.43333</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">v &lt;-<span class="st"> </span><span class="dv">5</span> </a>
+<a class="sourceLine" id="cb5-2" title="2">polygonal_variables &lt;-<span class="st"> </span><span class="kw">psymbolic</span>(center_radius, v)</a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">head</span>(polygonal_variables<span class="op">$</span>team_pts, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; [[1]]</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt;           [,1]      [,2]</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; [1,]  87.87197 100.80535</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt; [2,]  65.35004  93.48754</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt; [3,]  65.35004  69.80658</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="co">#&gt; [4,]  87.87197  62.48877</span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="co">#&gt; [5,] 101.79128  81.64706</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb5-12" title="12"><span class="co">#&gt; [[2]]</span></a>
+<a class="sourceLine" id="cb5-13" title="13"><span class="co">#&gt;           [,1]      [,2]</span></a>
+<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt; [1,]  87.93895 101.98923</span></a>
+<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; [2,]  63.47208  94.03946</span></a>
+<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt; [3,]  63.47208  68.31348</span></a>
+<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt; [4,]  87.93895  60.36371</span></a>
+<a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt; [5,] 103.06030  81.17647</span></a>
+<a class="sourceLine" id="cb5-19" title="19"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt; [[3]]</span></a>
+<a class="sourceLine" id="cb5-21" title="21"><span class="co">#&gt;          [,1]     [,2]</span></a>
+<a class="sourceLine" id="cb5-22" title="22"><span class="co">#&gt; [1,] 83.96283 95.45136</span></a>
+<a class="sourceLine" id="cb5-23" title="23"><span class="co">#&gt; [2,] 63.95694 88.95105</span></a>
+<a class="sourceLine" id="cb5-24" title="24"><span class="co">#&gt; [3,] 63.95694 67.91561</span></a>
+<a class="sourceLine" id="cb5-25" title="25"><span class="co">#&gt; [4,] 83.96283 61.41531</span></a>
+<a class="sourceLine" id="cb5-26" title="26"><span class="co">#&gt; [5,] 96.32715 78.43333</span></a></code></pre></div>
 </div>
 <div id="descriptive-measures" class="section level1">
 <h1>Descriptive Measures</h1>
 <p>After to obtain the symbolic polygonal data we can start to extract knowledge of this type of data through polygonal descriptive measure. Some of this measures are bi-dimensionals, because indicate the relation with the dimensions of the polygons [1]. In this vignette we present the mean, variance, covariance and correlation as can be seen below:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## symbolic polygonal mean
-<span class="kw">pmean</span>(polygonal_variables<span class="op">$</span>team_pts)
-<span class="co">#&gt; [1] 75.7991 75.7991</span>
-<span class="kw">pmean</span>(polygonal_variables<span class="op">$</span>opp_pts)
-<span class="co">#&gt; [1] 74.68993 74.68993</span>
-
-## symbolic polygonal variance
-<span class="kw">pvar</span>(polygonal_variables<span class="op">$</span>team_pts)
-<span class="co">#&gt; [1] 126.1975 126.1975</span>
-<span class="kw">pvar</span>(polygonal_variables<span class="op">$</span>opp_pts)
-<span class="co">#&gt; [1] 364.7798 364.7798</span>
-
-## symbolic polygonal covariance
-<span class="kw">pcov</span>(polygonal_variables<span class="op">$</span>team_pts)
-<span class="co">#&gt; [1] -2.379541</span>
-<span class="kw">pcov</span>(polygonal_variables<span class="op">$</span>opp_pts)
-<span class="co">#&gt; [1] -1.632418</span>
-
-## symbolic polygonal correlation
-<span class="kw">pcorr</span>(polygonal_variables<span class="op">$</span>team_pts) 
-<span class="co">#&gt; [1] -0.01885568</span>
-<span class="kw">pcorr</span>(polygonal_variables<span class="op">$</span>opp_pts) 
-<span class="co">#&gt; [1] -0.004475078</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co">## symbolic polygonal mean</span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="kw">pmean</span>(polygonal_variables<span class="op">$</span>team_pts)</a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="co">#&gt; [1] 75.7991 75.7991</span></a>
+<a class="sourceLine" id="cb6-4" title="4"><span class="kw">pmean</span>(polygonal_variables<span class="op">$</span>opp_pts)</a>
+<a class="sourceLine" id="cb6-5" title="5"><span class="co">#&gt; [1] 74.68993 74.68993</span></a>
+<a class="sourceLine" id="cb6-6" title="6"></a>
+<a class="sourceLine" id="cb6-7" title="7"><span class="co">## symbolic polygonal variance</span></a>
+<a class="sourceLine" id="cb6-8" title="8"><span class="kw">pvar</span>(polygonal_variables<span class="op">$</span>team_pts)</a>
+<a class="sourceLine" id="cb6-9" title="9"><span class="co">#&gt; [1] 126.1975 126.1975</span></a>
+<a class="sourceLine" id="cb6-10" title="10"><span class="kw">pvar</span>(polygonal_variables<span class="op">$</span>opp_pts)</a>
+<a class="sourceLine" id="cb6-11" title="11"><span class="co">#&gt; [1] 364.7798 364.7798</span></a>
+<a class="sourceLine" id="cb6-12" title="12"></a>
+<a class="sourceLine" id="cb6-13" title="13"><span class="co">## symbolic polygonal covariance</span></a>
+<a class="sourceLine" id="cb6-14" title="14"><span class="kw">pcov</span>(polygonal_variables<span class="op">$</span>team_pts)</a>
+<a class="sourceLine" id="cb6-15" title="15"><span class="co">#&gt; [1] -2.379541</span></a>
+<a class="sourceLine" id="cb6-16" title="16"><span class="kw">pcov</span>(polygonal_variables<span class="op">$</span>opp_pts)</a>
+<a class="sourceLine" id="cb6-17" title="17"><span class="co">#&gt; [1] -1.632418</span></a>
+<a class="sourceLine" id="cb6-18" title="18"></a>
+<a class="sourceLine" id="cb6-19" title="19"><span class="co">## symbolic polygonal correlation</span></a>
+<a class="sourceLine" id="cb6-20" title="20"><span class="kw">pcorr</span>(polygonal_variables<span class="op">$</span>team_pts) </a>
+<a class="sourceLine" id="cb6-21" title="21"><span class="co">#&gt; [1] -0.01885568</span></a>
+<a class="sourceLine" id="cb6-22" title="22"><span class="kw">pcorr</span>(polygonal_variables<span class="op">$</span>opp_pts) </a>
+<a class="sourceLine" id="cb6-23" title="23"><span class="co">#&gt; [1] -0.004475078</span></a></code></pre></div>
 <p>The construction of symbolic polygonal scatterplot is done through <a href="https://CRAN.R-project.org/package=ggplot2">ggplot2</a> package, including all modification. From <code>pplot</code> we use a symbolic polygonal variable to plot the scatterplot. The graphic is a powerful tool to understand the data, for example, in this case, we can observe a pentagon with a radius greater than all. This can indicate outliers.</p>
 </div>
 <div id="visualization" class="section level1">
 <h1>Visualization</h1>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pplot</span>(polygonal_variables<span class="op">$</span>team_pts) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">'Dimension 1'</span>, <span class="dt">y =</span> <span class="st">'Dimension 2'</span>) <span class="op">+</span>
-<span class="kw">theme_bw</span>()</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">pplot</span>(polygonal_variables<span class="op">$</span>team_pts) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Dimension 1&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Dimension 2&#39;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="kw">theme_bw</span>()</a></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 </div>
 <div id="modeling" class="section level1">
 <h1>Modeling</h1>
 <p>To explain the behavior of a <code>team_pts</code> polygonal variable across <code>fgaat</code>, <code>minutes</code>, <code>efficiency</code> and <code>opp_pts</code>polygonal variable, we use the polygonal linear regression model <code>plr</code>. The function needs of a <code>formula</code> and an <code>environment</code> containing the symbolic polygonal variables.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit &lt;-<span class="st"> </span><span class="kw">plr</span>(team_pts <span class="op">~</span><span class="st"> </span>fgatt <span class="op">+</span><span class="st"> </span>minutes <span class="op">+</span><span class="st"> </span>efficiency <span class="op">+</span><span class="st"> </span>opp_pts, <span class="dt">data =</span> polygonal_variables)</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">fit &lt;-<span class="st"> </span><span class="kw">plr</span>(team_pts <span class="op">~</span><span class="st"> </span>fgatt <span class="op">+</span><span class="st"> </span>minutes <span class="op">+</span><span class="st"> </span>efficiency <span class="op">+</span><span class="st"> </span>opp_pts, <span class="dt">data =</span> polygonal_variables)</a></code></pre></div>
 <p>The <code>summary</code> function is a method of <code>plr</code>. A summary of the polygonal linear regression model is showed from this method. In details, we can observe the quartile of the residuals, estimates of the parameters and its standard deviation. Besides, the statistical of test and the p-value is displayed.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)
-s
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Call:</span>
-<span class="co">#&gt; plr(formula = team_pts ~ fgatt + minutes + efficiency + opp_pts, </span>
-<span class="co">#&gt;     data = polygonal_variables)</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Residuals:</span>
-<span class="co">#&gt;    Min     1Q Median     3Q    Max </span>
-<span class="co">#&gt; -7.525 -2.145  0.018  1.958  8.756 </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Coefficients:</span>
-<span class="co">#&gt;                      Estimate Std. Error z value  Pr(&gt;|z|)    </span>
-<span class="co">#&gt; (center-intercept) 48.3670418  2.6609779 18.1764 &lt; 2.2e-16 ***</span>
-<span class="co">#&gt; center-fgatt       -0.1368189  0.1653467 -0.8275  0.408670    </span>
-<span class="co">#&gt; center-minutes     -0.0582787  0.0776782 -0.7503  0.453723    </span>
-<span class="co">#&gt; center-efficiency   0.3080644  0.1048899  2.9370  0.003586 ** </span>
-<span class="co">#&gt; center-opp_pts      0.3612354  0.0372591  9.6952 &lt; 2.2e-16 ***</span>
-<span class="co">#&gt; (radius-intercept) 14.0791683  1.0914791 12.8992 &lt; 2.2e-16 ***</span>
-<span class="co">#&gt; radius-fgatt       -0.0761514  0.2339476 -0.3255  0.745039    </span>
-<span class="co">#&gt; radius-minutes      0.0210633  0.0819685  0.2570  0.797390    </span>
-<span class="co">#&gt; radius-efficiency  -0.0042650  0.1075372 -0.0397  0.968392    </span>
-<span class="co">#&gt; radius-opp_pts      0.2777421  0.0094771 29.3066 &lt; 2.2e-16 ***</span>
-<span class="co">#&gt; ---</span>
-<span class="co">#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">s &lt;-<span class="st"> </span><span class="kw">summary</span>(fit)</a>
+<a class="sourceLine" id="cb9-2" title="2">s</a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb9-4" title="4"><span class="co">#&gt; Call:</span></a>
+<a class="sourceLine" id="cb9-5" title="5"><span class="co">#&gt; plr(formula = team_pts ~ fgatt + minutes + efficiency + opp_pts, </span></a>
+<a class="sourceLine" id="cb9-6" title="6"><span class="co">#&gt;     data = polygonal_variables)</span></a>
+<a class="sourceLine" id="cb9-7" title="7"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb9-8" title="8"><span class="co">#&gt; Residuals:</span></a>
+<a class="sourceLine" id="cb9-9" title="9"><span class="co">#&gt;    Min     1Q Median     3Q    Max </span></a>
+<a class="sourceLine" id="cb9-10" title="10"><span class="co">#&gt; -7.525 -2.145  0.018  1.958  8.756 </span></a>
+<a class="sourceLine" id="cb9-11" title="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb9-12" title="12"><span class="co">#&gt; Coefficients:</span></a>
+<a class="sourceLine" id="cb9-13" title="13"><span class="co">#&gt;                      Estimate Std. Error z value  Pr(&gt;|z|)    </span></a>
+<a class="sourceLine" id="cb9-14" title="14"><span class="co">#&gt; (center-intercept) 48.3670418  2.6609779 18.1764 &lt; 2.2e-16 ***</span></a>
+<a class="sourceLine" id="cb9-15" title="15"><span class="co">#&gt; center-fgatt       -0.1368189  0.1653467 -0.8275  0.408670    </span></a>
+<a class="sourceLine" id="cb9-16" title="16"><span class="co">#&gt; center-minutes     -0.0582787  0.0776782 -0.7503  0.453723    </span></a>
+<a class="sourceLine" id="cb9-17" title="17"><span class="co">#&gt; center-efficiency   0.3080644  0.1048899  2.9370  0.003586 ** </span></a>
+<a class="sourceLine" id="cb9-18" title="18"><span class="co">#&gt; center-opp_pts      0.3612354  0.0372591  9.6952 &lt; 2.2e-16 ***</span></a>
+<a class="sourceLine" id="cb9-19" title="19"><span class="co">#&gt; (radius-intercept) 14.0791683  1.0914791 12.8992 &lt; 2.2e-16 ***</span></a>
+<a class="sourceLine" id="cb9-20" title="20"><span class="co">#&gt; radius-fgatt       -0.0761514  0.2339476 -0.3255  0.745039    </span></a>
+<a class="sourceLine" id="cb9-21" title="21"><span class="co">#&gt; radius-minutes      0.0210633  0.0819685  0.2570  0.797390    </span></a>
+<a class="sourceLine" id="cb9-22" title="22"><span class="co">#&gt; radius-efficiency  -0.0042650  0.1075372 -0.0397  0.968392    </span></a>
+<a class="sourceLine" id="cb9-23" title="23"><span class="co">#&gt; radius-opp_pts      0.2777421  0.0094771 29.3066 &lt; 2.2e-16 ***</span></a>
+<a class="sourceLine" id="cb9-24" title="24"><span class="co">#&gt; ---</span></a>
+<a class="sourceLine" id="cb9-25" title="25"><span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span></a></code></pre></div>
 <p>We plot the residuals of the model from <code>plot</code> and the histogram.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(fit<span class="op">$</span>residuals, <span class="dt">ylab =</span> <span class="st">'Residuals'</span>)</code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">plot</span>(fit<span class="op">$</span>residuals, <span class="dt">ylab =</span> <span class="st">&#39;Residuals&#39;</span>)</a></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(fit<span class="op">$</span>residuals, <span class="dt">xlab =</span> <span class="st">'Residuals'</span>, <span class="dt">prob =</span> T, <span class="dt">main =</span> <span class="st">''</span>)</code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">hist</span>(fit<span class="op">$</span>residuals, <span class="dt">xlab =</span> <span class="st">&#39;Residuals&#39;</span>, <span class="dt">prob =</span> T, <span class="dt">main =</span> <span class="st">&#39;&#39;</span>)</a></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 <p>The fitted values to the model can be accessed from <code>fitted</code> method. The arguments are: (i) <code>model</code> that is an object of the class <code>plr</code>; (ii) a boolean, named <code>polygon</code>, if <code>TRUE</code> the output is the predicted polygons, otherwise, a vector with dimension <code>2n x 1</code> is computed, the first <code>n</code> individuals indicate the fitted center and the last the radius; (iii) <code>vertices</code> should be the number of vertices of the polygon selected previously. Besides, we print the first three fitted polygons and plot all from <code>pplot</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fitted_polygons &lt;-<span class="st"> </span><span class="kw">fitted</span>(fit, <span class="dt">polygon =</span> T, <span class="dt">vertices =</span> v)
-<span class="kw">head</span>(fitted_polygons, <span class="dv">3</span>)
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt;          [,1]     [,2]</span>
-<span class="co">#&gt; [1,] 85.68981 98.15132</span>
-<span class="co">#&gt; [2,] 63.98958 91.10049</span>
-<span class="co">#&gt; [3,] 63.98958 68.28353</span>
-<span class="co">#&gt; [4,] 85.68981 61.23270</span>
-<span class="co">#&gt; [5,] 99.10128 79.69201</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[2]]</span>
-<span class="co">#&gt;          [,1]     [,2]</span>
-<span class="co">#&gt; [1,] 85.42773 98.17383</span>
-<span class="co">#&gt; [2,] 63.23195 90.96198</span>
-<span class="co">#&gt; [3,] 63.23195 67.62395</span>
-<span class="co">#&gt; [4,] 85.42773 60.41210</span>
-<span class="co">#&gt; [5,] 99.14548 79.29297</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[3]]</span>
-<span class="co">#&gt;           [,1]     [,2]</span>
-<span class="co">#&gt; [1,]  85.84272 99.33535</span>
-<span class="co">#&gt; [2,]  62.34695 91.70111</span>
-<span class="co">#&gt; [3,]  62.34695 66.99619</span>
-<span class="co">#&gt; [4,]  85.84272 59.36195</span>
-<span class="co">#&gt; [5,] 100.36391 79.34865</span>
-
-<span class="kw">pplot</span>(fitted_polygons) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">'Dimension 1'</span>, <span class="dt">y =</span> <span class="st">'Dimension 2'</span>) <span class="op">+</span>
-<span class="kw">theme_bw</span>()</code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">fitted_polygons &lt;-<span class="st"> </span><span class="kw">fitted</span>(fit, <span class="dt">polygon =</span> T, <span class="dt">vertices =</span> v)</a>
+<a class="sourceLine" id="cb12-2" title="2"><span class="kw">head</span>(fitted_polygons, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb12-3" title="3"><span class="co">#&gt; [[1]]</span></a>
+<a class="sourceLine" id="cb12-4" title="4"><span class="co">#&gt;          [,1]     [,2]</span></a>
+<a class="sourceLine" id="cb12-5" title="5"><span class="co">#&gt; [1,] 85.68981 98.15132</span></a>
+<a class="sourceLine" id="cb12-6" title="6"><span class="co">#&gt; [2,] 63.98958 91.10049</span></a>
+<a class="sourceLine" id="cb12-7" title="7"><span class="co">#&gt; [3,] 63.98958 68.28353</span></a>
+<a class="sourceLine" id="cb12-8" title="8"><span class="co">#&gt; [4,] 85.68981 61.23270</span></a>
+<a class="sourceLine" id="cb12-9" title="9"><span class="co">#&gt; [5,] 99.10128 79.69201</span></a>
+<a class="sourceLine" id="cb12-10" title="10"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb12-11" title="11"><span class="co">#&gt; [[2]]</span></a>
+<a class="sourceLine" id="cb12-12" title="12"><span class="co">#&gt;          [,1]     [,2]</span></a>
+<a class="sourceLine" id="cb12-13" title="13"><span class="co">#&gt; [1,] 85.42773 98.17383</span></a>
+<a class="sourceLine" id="cb12-14" title="14"><span class="co">#&gt; [2,] 63.23195 90.96198</span></a>
+<a class="sourceLine" id="cb12-15" title="15"><span class="co">#&gt; [3,] 63.23195 67.62395</span></a>
+<a class="sourceLine" id="cb12-16" title="16"><span class="co">#&gt; [4,] 85.42773 60.41210</span></a>
+<a class="sourceLine" id="cb12-17" title="17"><span class="co">#&gt; [5,] 99.14548 79.29297</span></a>
+<a class="sourceLine" id="cb12-18" title="18"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb12-19" title="19"><span class="co">#&gt; [[3]]</span></a>
+<a class="sourceLine" id="cb12-20" title="20"><span class="co">#&gt;           [,1]     [,2]</span></a>
+<a class="sourceLine" id="cb12-21" title="21"><span class="co">#&gt; [1,]  85.84272 99.33535</span></a>
+<a class="sourceLine" id="cb12-22" title="22"><span class="co">#&gt; [2,]  62.34695 91.70111</span></a>
+<a class="sourceLine" id="cb12-23" title="23"><span class="co">#&gt; [3,]  62.34695 66.99619</span></a>
+<a class="sourceLine" id="cb12-24" title="24"><span class="co">#&gt; [4,]  85.84272 59.36195</span></a>
+<a class="sourceLine" id="cb12-25" title="25"><span class="co">#&gt; [5,] 100.36391 79.34865</span></a>
+<a class="sourceLine" id="cb12-26" title="26"></a>
+<a class="sourceLine" id="cb12-27" title="27"><span class="kw">pplot</span>(fitted_polygons) <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&#39;Dimension 1&#39;</span>, <span class="dt">y =</span> <span class="st">&#39;Dimension 2&#39;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb12-28" title="28"><span class="kw">theme_bw</span>()</a></code></pre></div>
 <p><img src="data:image/png;base64,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" /><!-- --></p>
 <p>Silva et al.[1] proposed a performance measure to evaluate the fit of model from root mean squared error for area, named rmsea. We can calculate from function <code>rmsea</code> as follow below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rmsea</span>(fitted_polygons, polygonal_variables<span class="op">$</span>team_pts)
-<span class="co">#&gt; [1] 282.8069</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">rmsea</span>(fitted_polygons, polygonal_variables<span class="op">$</span>team_pts)</a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="co">#&gt; [1] 282.8069</span></a></code></pre></div>
 </div>
 <div id="references" class="section level1">
 <h1>References</h1>
